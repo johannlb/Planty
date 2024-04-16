@@ -10,10 +10,80 @@ Version: 4.6.10.1712156007
 Updated: 2024-04-03 14:53:27
 
 */
+/* ----- Spécificités générales ----- */
 
+body{
+  font-family: 'Syne';
+}
+
+/* Suppression du padding par défaut avec le thème sur Article */
 .site-main > article {
     padding-top: 0 !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
     padding-bottom: 0 !important;
   }
+
+/* Suppression du padding par défaut avec le thème sur le Header*/
+.site-primary-header-wrap {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+/* ----- Page Accueil ----- */
+
+/* Forme arrondie pour le conteneur "Boisson Énergisante"*/
+.hero{
+  position: relative;
+  background: #2c3e50;
+  border-bottom-left-radius: 50% 10%;
+  border-bottom-right-radius: 50% 10%;
+}
+
+/* Hover appliqué sur le menu" */
+.menu-item-33 :hover{
+  font-weight: bold;
+}
+
+#menu-item-32 :hover{
+  background: #C02E44;
+}
+
+/* Forme bouton pour le lien Commander */
+#menu-item-32 .menu-link{
+display: inline-block;
+text-align: center !important;
+font-weight: 700;
+color: #FFF;
+background-color: #DC9F96;  
+width: 236px;
+height: 80px;
+}
+
+/* Forme arrondie pour le conteneur "Les Goûts" */
+.lesGouts{
+  position: relative;
+  background: #2c3e50;
+  border-bottom-left-radius: 50% 10%;
+  border-bottom-right-radius: 50% 10%;
+}
+
+/* Forme bouton Commander dans "Les Goûts"*/
+.buttonCommander{
+  width: 198px !important;
+  height: 55px !important;
+  border-radius: 25px !important;
+
+}
+
+/* ----- FOOTER -----*/
+footer{
+  text-align: center;
+  margin-top: 20px;
+}
+.footer-link a{
+  color: black;
+}
+.footer-link a:hover{
+  color: none;
+}
