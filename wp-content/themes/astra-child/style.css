@@ -46,7 +46,7 @@ body{
 }
 
 #menu-item-32 :hover{
-  background: #C02E44;
+  background-color: #C02E44 !important;
 }
 
 /* Forme bouton pour le lien Commander */
@@ -75,12 +75,62 @@ height: 80px;
   border-radius: 25px !important;
 
 }
+.citationAlignement{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.imageCanette{
+  display: flex;
+width: auto;
+}
+
+.hero2{
+  position: relative;
+  background: #2c3e50;
+  border-bottom-left-radius: 50% 19%;
+  border-bottom-right-radius: 50% 19%;
+}
+
+/* ----- FORMULAIRE -----*/
+
+.custom-contact-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.contact-form-fields label {
+  font-size: 20px;
+  margin-bottom: 10px;
+  width: 383px;
+}
+
+.wpcf7 input[type="submit"] {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  background-color: #E0B9B4 !important;
+  border-radius: 5px !important;
+  padding: 20px 60px !important;
+  color: white;
+}
+
+
+/*  */
 
 /* ----- FOOTER -----*/
 footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
 .footer-link a{
   color: black;
 }
