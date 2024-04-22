@@ -91,31 +91,61 @@ width: auto;
   background: #2c3e50;
   border-bottom-left-radius: 50% 19%;
   border-bottom-right-radius: 50% 19%;
+  background-attachment: fixed;
 }
+
+.equipeMarge{
+
+  line-height: 0;
+}
+
+/* CSS */
+.testtest {
+  width: 100%;
+  height: auto; /* Cela assure que l'image conserve son ratio hauteur/largeur */
+}
+
 
 /* ----- FORMULAIRE -----*/
 
-.custom-contact-form{
+.custom-contact-form {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
+
 .contact-form-fields label {
+  display: block;
   font-size: 20px;
-  margin-bottom: 10px;
-  width: 383px;
+}
+
+.labelclass{
+  margin-bottom: 20px;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"] {
+  margin-top: 10px;
+  width: 383px; /* Définir la largeur des champs de texte et d'email */
+  height: 71px; /* Définir la hauteur des champs de texte et d'email */
+}
+
+.wpcf7 textarea {
+  margin-top: 10px;
+  width: 383px; /* Définir la largeur du champ "Message" */
+  height: 237px; /* Définir une hauteur spécifique pour le champ "Message" */
 }
 
 .wpcf7 input[type="submit"] {
-  display: flex;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-  background-color: #E0B9B4 !important;
-  border-radius: 5px !important;
-  padding: 20px 60px !important;
+  display: block; 
+  margin: 0 auto; 
+  width: 198px;
+  background-color: #E0B9B4 ;
+  border-radius: 5px ;
+  padding: 20px 60px;
   color: white;
+  border: none; 
+  cursor: pointer; 
 }
 
 
