@@ -18,9 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php astra_content_bottom(); ?>
 	</div> <!-- ast-container -->
 	</div><!-- #content -->
-<footer>
+<footer class="footer-container">
 	<div class=footer-link>
-	<a href=/privacy-policy>Mentions légales
+	<a href=/privacy-policy>Mentions légales </a>
 	</div>
 </footer>
 	</div><!-- #page -->

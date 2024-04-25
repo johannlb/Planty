@@ -40,6 +40,37 @@ body{
   border-bottom-right-radius: 50% 10%;
 }
 
+.fleurCanette {
+  width: 100%;
+  height: 950px;
+  margin-bottom: 0;
+  padding-bottom: 0; /* Assurez-vous qu'il n'y a pas de rembourrage en bas */
+  display: block;
+  content: " ";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("http://localhost:10008/wp-content/uploads/2024/04/canetteCentre.png"),
+                    url("http://localhost:10008/wp-content/uploads/2024/04/FleurGauche.png"),
+                    url("http://localhost:10008/wp-content/uploads/2024/04/fleurDroite.png");
+  background-position: 50% 50%, 30% 40%, 74% 40%;
+  background-size: contain, 30%, 30%;
+}
+
+
+@media (max-width: 768px) {
+  .fleurCanette {
+    height: 700px; /* Réduire la hauteur pour les écrans plus petits */
+  }
+}
+
+@media (max-width: 576px) {
+  .fleurCanette {
+    height: 500px; /* Réduire encore la hauteur pour les écrans plus petits */
+  }
+}
+
+
+
 /* Hover appliqué sur le menu" */
 .menu-item-33 :hover{
   font-weight: bold;
@@ -85,6 +116,7 @@ align-items: center;
   display: flex;
 width: auto;
 }
+/* ----- Conteneur hero2 "Nous rencontrer" -----*/
 
 .hero2{
   position: relative;
@@ -98,12 +130,65 @@ width: auto;
 
   line-height: 0;
 }
+/*Motif Fleur "Nous rencontrer"*/
 
-/* CSS */
-.testtest {
-  width: 100%;
-  height: auto; /* Cela assure que l'image conserve son ratio hauteur/largeur */
+.fleurNousrencontrer{
+  position: relative; /* Position relative pour que le pseudo-élément soit positionné par rapport à ce conteneur */
+
 }
+.fleurNousrencontrer::after {
+  display: block;
+  content: "" !important;  /* Obligatoire pour afficher le pseudo-élément */
+  position: absolute; /* Position absolue pour placer le pseudo-élément par rapport au conteneur */
+  left : -5%;
+  bottom: 50%;  
+  width: 276px !important; /* Prend toute la largeur du conteneur */
+  height: 272px !important; /* Prend toute la hauteur du conteneur */
+  background-image: url("http://localhost:10008/wp-content/uploads/2024/04/Group-2.png");
+}  
+
+  /* Media Query pour les écrans de résolution supérieure à 1080p */
+
+
+
+/* Pour les écrans de taille inférieure à 768px (typiquement les appareils mobiles) */
+@media screen and (max-width: 768px) {
+.fleurNousrencontrer::after {
+    top:-10%;
+    transform: scale(0.2); /* Redimensionne l'image à 30% de sa taille d'origine */
+    
+  }
+}
+/*Motif Fleur "L'équipe"*/
+.fleurEquipe {
+  position: relative; /* Position relative pour que le pseudo-élément soit positionné par rapport à ce conteneur */
+
+}
+
+.fleurEquipe::before {
+  display: block;
+  content: ""; /* Obligatoire pour afficher le pseudo-élément */
+  position: absolute; /* Position absolue pour placer le pseudo-élément par rapport au conteneur */
+  right: 0;  
+  bottom: -100px;
+  width: 350px; /* Prend toute la largeur du conteneur */
+  height: 401px; /* Prend toute la hauteur du conteneur */
+  background-image: url("http://localhost:10008/wp-content/uploads/2024/04/fleurEquipe.png");
+  z-index: -1; /* Place le pseudo-élément derrière le contenu */
+  transform: scale(0.5); /* Réduit la taille de l'élément à 50% */
+
+}
+
+/* Pour les écrans de taille inférieure à 768px (typiquement les appareils mobiles) */
+@media screen and (max-width: 768px) {
+  .fleurEquipe::before {
+    transform: scale(0.2); /* Redimensionne l'image à 30% de sa taille d'origine */
+    bottom: -160px;
+    right: -120px;
+    
+  }
+}
+
 
 
 /* ----- FORMULAIRE -----*/
@@ -148,22 +233,92 @@ width: auto;
   cursor: pointer; 
 }
 
+/*Motif Fleur "Formulaire"*/
 
-/*  */
+#wpcf7-f5-p27-o1 > form > div.custom-contact-form > div > p:nth-child(1) > label:nth-child(5)::after{
+  background-image: url("http://localhost:10008/wp-content/uploads/2024/04/fleurFormulaire.png");
+  width: 185px;
+  height: 178px;
+  display: block;
+  content:" ";
+  position:absolute;
+  bottom: 75px;
+  margin-left:-75px;
+  
+}
+wpcf7-f5-p27-o1 > form > div.custom-contact-form > div > p:nth-child(1) > label:nth-child(5){
+  position: relative;
+}
+#wpcf7-f5-p27-o1 > form > div.custom-contact-form > div > p:nth-child(1) > label:nth-child(5) > span > textarea{
+  z-index:100;
+  position: relative !important;
+}
 
+/*Background pied de page */
+.uagb-block-1a040e18.wp-block-uagb-image .wp-block-uagb-image__figure img{
+height: auto !important;
+}
 /* ----- FOOTER -----*/
-footer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+footer {
+  position: relative;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.footer-link a{
+.footer-link a {
   color: black;
+  height: 30px;
+  display: block; /* Pour que le lien prenne toute la largeur */
 }
-.footer-link a:hover{
+
+.footer-link a:hover {
   color: none;
+}
+
+.footer-container {
+  position: relative;
+}
+
+
+/* ----- Formulaire COMMANDER ----- */
+
+h1.TitreFormulaire{
+
+color: #FFF;
+font-family: Syne;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: none;
+}
+
+.formulaire-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligne les éléments à gauche */
+}
+
+.TitreFormulaire {
+  text-align: left; /* Alignement du texte à gauche */
+  margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.images-container {
+  display: flex;
+  justify-content: flex-start; /* Aligne les éléments à gauche */
+  align-items: center; /* Centre les éléments verticalement */
+}
+
+.images-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre les éléments horizontalement */
+  margin-right: 30px; /* Espacement entre les images */
+}
+
+.quantite-input {
+  margin-top: 5px; /* Espacement entre l'image et le champ de quantité */
+  
 }
