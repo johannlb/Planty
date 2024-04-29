@@ -18,11 +18,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php astra_content_bottom(); ?>
 	</div> <!-- ast-container -->
 	</div><!-- #content -->
-<footer class="footer-container">
+
+	<?php 
+	astra_content_after();
+		
+	astra_footer_before();
+		
+	astra_footer();
+		
+	astra_footer_after(); 
+?>
+<!-- <footer class="footer-container">
 	<div class=footer-link>
 	<a href=/privacy-policy>Mentions légales </a>
 	</div>
-</footer>
+</footer> -->
 	</div><!-- #page -->
 <?php 
 	astra_body_bottom();    

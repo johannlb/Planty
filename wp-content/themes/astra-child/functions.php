@@ -21,4 +21,16 @@ if ( !function_exists( 'child_theme_configurator_css' ) ):
 endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
 
+add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
+function add_extra_item_to_nav_menu( $items, $args ) {
+    // var_dump($args);
+    if (is_user_logged_in() && $args->menu->term_id == 4) {
+        $items .= '<li><a href="'. get_permalink( get_option('woocommerce_myaccount_page_id') ) .'">My Account</a></li>';
+    }
+    elseif (!is_user_logged_in() && $args->menu->term_id == 4) {
+        $items .= '<li><a href="#">Sign in  /  Register</a></li>';
+    }
+    return $items;
+}
+
 // END ENQUEUE PARENT ACTION

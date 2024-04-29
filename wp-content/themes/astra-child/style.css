@@ -44,7 +44,7 @@ body{
   width: 100%;
   height: 950px;
   margin-bottom: 0;
-  padding-bottom: 0; /* Assurez-vous qu'il n'y a pas de rembourrage en bas */
+  padding-bottom: 0;
   display: block;
   content: " ";
   position: absolute;
@@ -254,34 +254,18 @@ wpcf7-f5-p27-o1 > form > div.custom-contact-form > div > p:nth-child(1) > label:
   position: relative !important;
 }
 
-/*Background pied de page */
-.uagb-block-1a040e18.wp-block-uagb-image .wp-block-uagb-image__figure img{
-height: auto !important;
-}
+
 /* ----- FOOTER -----*/
-footer {
-  position: relative;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.footer-link a {
-  color: black;
-  height: 30px;
-  display: block; /* Pour que le lien prenne toute la largeur */
-}
-
-.footer-link a:hover {
-  color: none;
-}
-
-.footer-container {
-  position: relative;
+#colophon > div{
+  height: 60px;
 }
 
 
 /* ----- Formulaire COMMANDER ----- */
+
+.page-id-30{
+  background-color: red;
+}
 
 h1.TitreFormulaire{
 
@@ -305,6 +289,12 @@ text-transform: none;
   margin-bottom: 10px; /* Espacement sous le titre */
 }
 
+.containercommande{
+  text-align: center;
+  border-top:1px solid white;
+  border-bottom: 1px solid white;
+  padding: 16px 0
+}
 .images-container {
   display: flex;
   justify-content: flex-start; /* Aligne les éléments à gauche */
@@ -321,4 +311,19 @@ text-transform: none;
 .quantite-input {
   margin-top: 5px; /* Espacement entre l'image et le champ de quantité */
   
+  
+}
+
+.blocs-group{
+  display: flex;
+  width: 100%;
+}
+
+.bloc1, .bloc2{ 
+width: 50%;
+margin-top: 32px;
+}
+
+.bloc1{
+  border-right: 1px solid white;
 }
