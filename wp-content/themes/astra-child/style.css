@@ -42,30 +42,30 @@ body{
 
 .fleurCanette {
   width: 100%;
-  height: 950px;
   margin-bottom: 0;
   padding-bottom: 0;
   display: block;
   content: " ";
   position: absolute;
   background-repeat: no-repeat;
-  background-image: url("http://localhost:10008/wp-content/uploads/2024/04/canetteCentre.png"),
+  background-image: 
                     url("http://localhost:10008/wp-content/uploads/2024/04/FleurGauche.png"),
                     url("http://localhost:10008/wp-content/uploads/2024/04/fleurDroite.png");
-  background-position: 50% 50%, 30% 40%, 74% 40%;
-  background-size: contain, 30%, 30%;
+  background-position: 32% 40%, 72% 40%;
 }
 
 
 @media (max-width: 768px) {
   .fleurCanette {
-    height: 700px; /* Réduire la hauteur pour les écrans plus petits */
+    background-size: 30%;
+    background-position: 30% 30%, 72% 30%;
   }
 }
 
 @media (max-width: 576px) {
   .fleurCanette {
-    height: 500px; /* Réduire encore la hauteur pour les écrans plus petits */
+    background-size: 30%;
+    background-position: 30% 10%, 72% 10%;
   }
 }
 
@@ -144,18 +144,15 @@ width: auto;
   bottom: 50%;  
   width: 276px !important; /* Prend toute la largeur du conteneur */
   height: 272px !important; /* Prend toute la hauteur du conteneur */
+  background: no-repeat;
   background-image: url("http://localhost:10008/wp-content/uploads/2024/04/Group-2.png");
 }  
-
-  /* Media Query pour les écrans de résolution supérieure à 1080p */
-
-
 
 /* Pour les écrans de taille inférieure à 768px (typiquement les appareils mobiles) */
 @media screen and (max-width: 768px) {
 .fleurNousrencontrer::after {
-    top:-10%;
-    transform: scale(0.2); /* Redimensionne l'image à 30% de sa taille d'origine */
+        background-position: 64% -8%;
+        background-size: 30%;
     
   }
 }
@@ -211,7 +208,6 @@ width: auto;
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"] {
   margin-top: 10px;
-  width: 383px; /* Définir la largeur des champs de texte et d'email */
   height: 71px; /* Définir la hauteur des champs de texte et d'email */
 }
 
@@ -264,7 +260,7 @@ wpcf7-f5-p27-o1 > form > div.custom-contact-form > div > p:nth-child(1) > label:
 /* ----- Formulaire COMMANDER ----- */
 
 .page-id-30{
-  background-color: red;
+  background-color:#3B8E46;
 }
 
 h1.TitreFormulaire{
@@ -293,37 +289,104 @@ text-transform: none;
   text-align: center;
   border-top:1px solid white;
   border-bottom: 1px solid white;
-  padding: 16px 0
+  padding: 16px 0;
+  width: 100%;
 }
 .images-container {
   display: flex;
   justify-content: flex-start; /* Aligne les éléments à gauche */
   align-items: center; /* Centre les éléments verticalement */
+  column-gap: 30px; /* Espacement entre les images */
+
 }
 
 .images-container > div {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centre les éléments horizontalement */
-  margin-right: 30px; /* Espacement entre les images */
 }
 
 .quantite-input {
-  margin-top: 5px; /* Espacement entre l'image et le champ de quantité */
+  margin-top: 5px; /* Espacement entre l'image et le champ de quantitÃ© */
+  width: 50px !important;
+  height:56px !important;
+  text-align: center;
   
-  
+}
+
+.quantite-input::placeholder {
+  color: black; /* Couleur du placeholder */
+  font-size: 16px ;
+  font-family:'Inter';
+  text-align:center;
+}
+
+.quantite-input:focus {
+color: green;
+}
+
+.labelclass{
+  font-size: 20px;
+  color: #FFF;
+
 }
 
 .blocs-group{
   display: flex;
   width: 100%;
+  row-gap: 32px;
+}
+
+.blocs-group p{
+  margin: 0;
 }
 
 .bloc1, .bloc2{ 
+display: flex;
+flex-direction: column;
 width: 50%;
 margin-top: 32px;
+row-gap: 16px;
 }
 
 .bloc1{
   border-right: 1px solid white;
+padding-right: 32px;
+}
+
+.bloc1 input, .bloc2 input{
+  width: 100%;
+}
+
+.bloc2{
+  padding-left: 32px;
+}
+
+.submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 32px;
+}
+
+@media screen and (max-width:768px){
+  .blocs-group{
+    flex-direction: column;
+  }
+  .bloc1,.bloc2{
+    width: 100%;
+    padding:0;
+  }
+  .bloc1{
+    border:none;
+  }
+  .images-container{
+    flex-direction: column;
+  }
+}
+@media screen and (max-width:425px){
+  .wp-block-heading{
+    font-size:1.75rem !important;
+  }
 }
