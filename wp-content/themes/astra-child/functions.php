@@ -21,14 +21,30 @@ if ( !function_exists( 'child_theme_configurator_css' ) ):
 endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
 
-add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
-function add_extra_item_to_nav_menu( $items, $args ) {
-    // var_dump($args);
-    if (is_user_logged_in() && $args->menu->term_id == 4) {
-        $items .= '<li><a href="'. get_permalink( get_option('woocommerce_myaccount_page_id') ) .'">My Account</a></li>';
-    }
-    elseif (!is_user_logged_in() && $args->menu->term_id == 4) {
-        $items .= '<li><a href="#">Sign in  /  Register</a></li>';
+// add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
+// function add_extra_item_to_nav_menu( $items, $args ) {
+//     // var_dump($args);
+//     if (is_user_logged_in() && $args->menu->term_id == 4) {
+//         $items .= '<a class="menu-link" href="http://localhost:10008/wp-admin/">Admin</a>';
+//     }
+//     elseif (!is_user_logged_in() && $args->menu->term_id == 4) {
+//         $items .= '';
+//     }
+//     return $items;
+// }
+
+add_filter( 'wp_nav_menu_objects', 'hide_admin_menu_for_non_logged_in_users', 10, 2 );
+function hide_admin_menu_for_non_logged_in_users( $items, $args ) {
+    // Vérifie si l'utilisateur n'est pas connecté
+    if ( ! is_user_logged_in() ) {
+        // Parcours tous les éléments du menu
+        foreach ( $items as $key => $item ) {
+            // Vérifie si le titre de l'élément est "Admin"
+            if ( $item->title === 'Admin' ) {
+                // Supprime l'élément du tableau
+                unset( $items[$key] );
+            }
+        }
     }
     return $items;
 }

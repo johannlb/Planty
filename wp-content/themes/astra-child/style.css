@@ -142,17 +142,18 @@ width: auto;
   position: absolute; /* Position absolue pour placer le pseudo-élément par rapport au conteneur */
   left : -5%;
   bottom: 50%;  
-  width: 276px !important; /* Prend toute la largeur du conteneur */
-  height: 272px !important; /* Prend toute la hauteur du conteneur */
+  width: 100% ; /* Prend toute la largeur du conteneur */
+  height: 100%; /* Prend toute la hauteur du conteneur */
   background: no-repeat;
+  background-size: contain;
   background-image: url("http://localhost:10008/wp-content/uploads/2024/04/Group-2.png");
 }  
 
 /* Pour les écrans de taille inférieure à 768px (typiquement les appareils mobiles) */
 @media screen and (max-width: 768px) {
 .fleurNousrencontrer::after {
-        background-position: 64% -8%;
-        background-size: 30%;
+  transform: scale(0.3);
+  top:-66%;
     
   }
 }
@@ -213,7 +214,6 @@ width: auto;
 
 .wpcf7 textarea {
   margin-top: 10px;
-  width: 383px; /* Définir la largeur du champ "Message" */
   height: 237px; /* Définir une hauteur spécifique pour le champ "Message" */
 }
 
@@ -384,9 +384,21 @@ padding-right: 32px;
   .images-container{
     flex-direction: column;
   }
+
+  .alignleft, .alignright{
+    margin:0 !important;
+    margin-inline: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    float:none !important;
+  }
 }
 @media screen and (max-width:425px){
   .wp-block-heading{
     font-size:1.75rem !important;
   }
+  .titreMobile{
+    font-size: 1rem !important;
+  }
+
 }
