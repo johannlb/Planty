@@ -55,20 +55,6 @@ body{
 }
 
 
-@media (max-width: 768px) {
-  .fleurCanette {
-    background-size: 30%;
-    background-position: 30% 30%, 72% 30%;
-  }
-}
-
-@media (max-width: 576px) {
-  .fleurCanette {
-    background-size: 30%;
-    background-position: 30% 10%, 72% 10%;
-  }
-}
-
 
 
 /* Hover appliqué sur le menu" */
@@ -133,60 +119,41 @@ width: auto;
 /*Motif Fleur "Nous rencontrer"*/
 
 .fleurNousrencontrer{
-  position: relative; /* Position relative pour que le pseudo-élément soit positionné par rapport à ce conteneur */
+  position: relative; 
 
 }
 .fleurNousrencontrer::after {
   display: block;
-  content: "" !important;  /* Obligatoire pour afficher le pseudo-élément */
-  position: absolute; /* Position absolue pour placer le pseudo-élément par rapport au conteneur */
+  content: "" !important;  
+  position: absolute; 
   left : -5%;
   bottom: 50%;  
-  width: 100% ; /* Prend toute la largeur du conteneur */
-  height: 100%; /* Prend toute la hauteur du conteneur */
+  width: 100% ; 
+  height: 100%; 
   background: no-repeat;
   background-size: contain;
   background-image: url("http://localhost:10008/wp-content/uploads/2024/04/Group-2.png");
 }  
 
-/* Pour les écrans de taille inférieure à 768px (typiquement les appareils mobiles) */
-@media screen and (max-width: 768px) {
-.fleurNousrencontrer::after {
-  transform: scale(0.3);
-  top:-66%;
-    
-  }
-}
 /*Motif Fleur "L'équipe"*/
 .fleurEquipe {
-  position: relative; /* Position relative pour que le pseudo-élément soit positionné par rapport à ce conteneur */
+  position: relative; 
 
 }
 
 .fleurEquipe::before {
   display: block;
-  content: ""; /* Obligatoire pour afficher le pseudo-élément */
-  position: absolute; /* Position absolue pour placer le pseudo-élément par rapport au conteneur */
+  content: ""; 
+  position: absolute; 
   right: 0;  
   bottom: -100px;
-  width: 350px; /* Prend toute la largeur du conteneur */
-  height: 401px; /* Prend toute la hauteur du conteneur */
+  width: 350px; 
+  height: 401px; 
   background-image: url("http://localhost:10008/wp-content/uploads/2024/04/fleurEquipe.png");
-  z-index: -1; /* Place le pseudo-élément derrière le contenu */
-  transform: scale(0.5); /* Réduit la taille de l'élément à 50% */
+  z-index: -1; 
+  transform: scale(0.5); 
 
 }
-
-/* Pour les écrans de taille inférieure à 768px (typiquement les appareils mobiles) */
-@media screen and (max-width: 768px) {
-  .fleurEquipe::before {
-    transform: scale(0.2); /* Redimensionne l'image à 30% de sa taille d'origine */
-    bottom: -160px;
-    right: -120px;
-    
-  }
-}
-
 
 
 /* ----- FORMULAIRE -----*/
@@ -209,12 +176,12 @@ width: auto;
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"] {
   margin-top: 10px;
-  height: 71px; /* Définir la hauteur des champs de texte et d'email */
+  height: 71px; 
 }
 
 .wpcf7 textarea {
   margin-top: 10px;
-  height: 237px; /* Définir une hauteur spécifique pour le champ "Message" */
+  height: 237px; 
 }
 
 .wpcf7 input[type="submit"] {
@@ -277,12 +244,12 @@ text-transform: none;
 .formulaire-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligne les éléments à gauche */
+  align-items: flex-start; 
 }
 
 .TitreFormulaire {
-  text-align: left; /* Alignement du texte à gauche */
-  margin-bottom: 10px; /* Espacement sous le titre */
+  text-align: left; 
+  margin-bottom: 10px; 
 }
 
 .containercommande{
@@ -294,28 +261,28 @@ text-transform: none;
 }
 .images-container {
   display: flex;
-  justify-content: flex-start; /* Aligne les éléments à gauche */
-  align-items: center; /* Centre les éléments verticalement */
-  column-gap: 30px; /* Espacement entre les images */
+  justify-content: flex-start; 
+  align-items: center; 
+  column-gap: 30px; 
 
 }
 
 .images-container > div {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre les éléments horizontalement */
+  align-items: center; 
 }
 
 .quantite-input {
-  margin-top: 5px; /* Espacement entre l'image et le champ de quantitÃ© */
-  width: 50px !important;
+  margin-top: 5px; 
+  width: 60px !important;
   height:56px !important;
   text-align: center;
   
 }
 
 .quantite-input::placeholder {
-  color: black; /* Couleur du placeholder */
+  color: black; 
   font-size: 16px ;
   font-family:'Inter';
   text-align:center;
@@ -392,13 +359,37 @@ padding-right: 32px;
     justify-content: center !important;
     float:none !important;
   }
+  .fleurNousrencontrer::after {
+    transform: scale(0.3);
+    top:-66%;
+      
+    }
+
+    .fleurEquipe::before {
+      transform: scale(0.2); 
+      bottom: -160px;
+      right: -120px;
+      
+    }
+    .fleurCanette {
+      background-size: 30%;
+      background-position: 30% 30%, 72% 30%;
+    }
+  
 }
 @media screen and (max-width:425px){
   .wp-block-heading{
-    font-size:1.75rem !important;
+    font-size:1.3rem !important;
   }
   .titreMobile{
     font-size: 1rem !important;
   }
 
+}
+
+@media (max-width: 576px) {
+  .fleurCanette {
+    background-size: 30%;
+    background-position: 30% 10%, 72% 10%;
+  }
 }

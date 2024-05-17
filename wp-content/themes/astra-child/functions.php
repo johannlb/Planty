@@ -21,19 +21,9 @@ if ( !function_exists( 'child_theme_configurator_css' ) ):
 endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
 
-// add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
-// function add_extra_item_to_nav_menu( $items, $args ) {
-//     // var_dump($args);
-//     if (is_user_logged_in() && $args->menu->term_id == 4) {
-//         $items .= '<a class="menu-link" href="http://localhost:10008/wp-admin/">Admin</a>';
-//     }
-//     elseif (!is_user_logged_in() && $args->menu->term_id == 4) {
-//         $items .= '';
-//     }
-//     return $items;
-// }
-
 add_filter( 'wp_nav_menu_objects', 'hide_admin_menu_for_non_logged_in_users', 10, 2 );
+//Fonction pour cacher l'élément de menu "Admin" pour les utilisateurs non connectés//
+
 function hide_admin_menu_for_non_logged_in_users( $items, $args ) {
     // Vérifie si l'utilisateur n'est pas connecté
     if ( ! is_user_logged_in() ) {
@@ -46,6 +36,8 @@ function hide_admin_menu_for_non_logged_in_users( $items, $args ) {
             }
         }
     }
+        // Retourne les éléments du menu modifiés
+
     return $items;
 }
 
