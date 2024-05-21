@@ -49,8 +49,8 @@ body{
   position: absolute;
   background-repeat: no-repeat;
   background-image: 
-                    url("http://localhost:10008/wp-content/uploads/2024/04/FleurGauche.png"),
-                    url("http://localhost:10008/wp-content/uploads/2024/04/fleurDroite.png");
+                    url("/wp-content/uploads/2024/04/FleurGauche.png"),
+                    url("/wp-content/uploads/2024/04/fleurDroite.png");
   background-position: 32% 40%, 72% 40%;
 }
 
@@ -132,7 +132,7 @@ width: auto;
   height: 100%; 
   background: no-repeat;
   background-size: contain;
-  background-image: url("http://localhost:10008/wp-content/uploads/2024/04/Group-2.png");
+  background-image: url("/wp-content/uploads/2024/04/Group-2.png");
 }  
 
 /*Motif Fleur "L'équipe"*/
@@ -149,7 +149,7 @@ width: auto;
   bottom: -100px;
   width: 350px; 
   height: 401px; 
-  background-image: url("http://localhost:10008/wp-content/uploads/2024/04/fleurEquipe.png");
+  background-image: url("/wp-content/uploads/2024/04/fleurEquipe.png");
   z-index: -1; 
   transform: scale(0.5); 
 
@@ -199,7 +199,7 @@ width: auto;
 /*Motif Fleur "Formulaire"*/
 
 #wpcf7-f5-p27-o1 > form > div.custom-contact-form > div > p:nth-child(1) > label:nth-child(5)::after{
-  background-image: url("http://localhost:10008/wp-content/uploads/2024/04/fleurFormulaire.png");
+  background-image: url("/wp-content/uploads/2024/04/fleurFormulaire.png");
   width: 185px;
   height: 178px;
   display: block;
@@ -335,6 +335,10 @@ padding-right: 32px;
   align-items: center;
   width: 100%;
   margin-top: 32px;
+}
+
+.wpcf7 input[type="submit"]:hover {
+  background-color: #C02E44;
 }
 
 @media screen and (max-width:768px){
